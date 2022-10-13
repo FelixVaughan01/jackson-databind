@@ -143,6 +143,12 @@ public class ObjectMapper
         }
     }
 
+    public ObjectMapper copyWith(TokenStreamFactory tsf) throws CloneNotSupportedException {
+        MapperBuilder builder = this.rebuild();
+        builder.withStreamFactory(tsf);
+        return new ObjectMapper(builder);
+    }
+
     /*
     /**********************************************************************
     /* Internal constants, singletons

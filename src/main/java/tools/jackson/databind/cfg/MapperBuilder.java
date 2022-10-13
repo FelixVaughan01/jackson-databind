@@ -513,6 +513,9 @@ public abstract class MapperBuilder<M extends ObjectMapper,
         return _streamFactory;
     }
 
+    public void withStreamFactory(TokenStreamFactory tsf) {
+        _streamFactory = tsf;
+    }
     public AnnotationIntrospector annotationIntrospector() {
         return _baseSettings.getAnnotationIntrospector();
     }
